@@ -1,0 +1,29 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+
+# pacotes necessarios para o nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+
+pairs = [
+  ['Hello', ['Hello! How was your day?']],
+]
+
+# criando o chatbot
+chatbot = Chat(pairs, reflections)
+
+def talk():
+  print('Welcome to Chatbot! Type "exit" to well... exit.')
+
+  while True:
+    user_input = input('You: ')
+    
+    if user_input.lower() == 'exit':
+      print('We are done for now. Have a good day!')
+      break
+
+    chat_response = chatbot.respond(user_input)
+    print('Chatbot: ', chat_response)
+
+if __name__ == '__main__':
+  talk()
