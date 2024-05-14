@@ -2,11 +2,14 @@ import nltk
 from nltk.chat.util import Chat, reflections
 
 # pacotes necessarios para o nltk
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
+# nltk.download('punkt')
+# nltk.download('averaged_perceptron_tagger')
 
 pairs = [
   ['Hello', ['Hello! How was your day?']],
+  ['(.*?)sad(.*?)', ['That is unfortunate... Can i help somehow?']],
+  ['(.*?)ok(.*?)', ['It is alright, you got through one more day. Be proud of yourself.']],
+  ['(.*?)great(.*?)', ['Glad to know! Keep having a great one!']],
 ]
 
 # criando o chatbot
